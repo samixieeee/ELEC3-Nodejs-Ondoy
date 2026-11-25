@@ -1,0 +1,11 @@
+{
+  "name": "n4-server",
+  "version": "1.0.0",
+  "description": "ELEC 3 N4 Basic HTTP server - Samantha Ondoy (IV-BSIT-A)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Samantha Ondoy",
+  "license": "ISC"
+}
