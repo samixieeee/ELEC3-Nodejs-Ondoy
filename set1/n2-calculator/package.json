@@ -1,0 +1,11 @@
+{
+  "name": "n2-calculator",
+  "version": "1.0.0",
+  "description": "ELEC 3 N2 Modular calculator - Samantha Ondoy (IV-BSIT-A)",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Samantha Ondoy",
+  "license": "ISC"
+}
