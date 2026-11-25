@@ -1,0 +1,18 @@
+{
+  "name": "n1-setup",
+  "version": "1.0.0",
+  "description": "ELEC 3 N1 - Project setup and package management by Samantha Ondoy (IV-BSIT-A)",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "format": "prettier --write index.js"
+  },
+  "author": "Samantha Ondoy",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.1.2"
+  },
+  "devDependencies": {
+    "prettier": "^3.8.1"
+  }
+}

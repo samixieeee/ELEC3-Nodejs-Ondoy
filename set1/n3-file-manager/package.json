@@ -1,0 +1,11 @@
+{
+  "name": "n3-file-manager",
+  "version": "1.0.0",
+  "description": "ELEC 3 N3 File manager using fs and path - Samantha Ondoy (IV-BSIT-A)",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Samantha Ondoy",
+  "license": "ISC"
+}
