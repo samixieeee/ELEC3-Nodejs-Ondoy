@@ -6,7 +6,7 @@
 **Instructor:** Carl Gustaf Patrik B. Ferrer
 **Date:** 11-21-2026
 
-Node.js activities for Set 1 (N1–N3). Only N1 uses npm packages. N2 and N3 use Node's built-in modules, so they run without `npm install`.
+Node.js activities for Set 1 (N1–N3) and Set 2 (N4–N6). Only N1 uses npm packages. N2–N6 use Node's built-in modules, so they run without `npm install`.
 
 ## Activities
 
@@ -15,8 +15,11 @@ Node.js activities for Set 1 (N1–N3). Only N1 uses npm packages. N2 and N3 use
 | N1 | Project Setup and Package Management | [set1/n1-setup](set1/n1-setup/) | npm project with chalk (dependency) and Prettier (devDependency); `npm start` prints a message with my name. |
 | N2 | Modular Calculator | [set1/n2-calculator](set1/n2-calculator/) | Command-line add, subtract, multiply, divide, and average split across `operations.js`, `formatter.js`, and `index.js`. |
 | N3 | File Manager with fs and path | [set1/n3-file-manager](set1/n3-file-manager/) | Create, read, append, delete, and list `.txt` files inside `files/`. |
+| N4 | Basic HTTP Server | [set2/n4-server](set2/n4-server/) | `http` server on port 8000 with `/`, `/about`, `/contact`, and a 404 page. |
+| N5 | REST-style API | [set2/n5-api](set2/n5-api/) | Students API with GET, POST, PUT, and DELETE on an in-memory array (port 3000). |
+| N6 | Middleware and API Testing | [set2/n6-middleware](set2/n6-middleware/) | Copy of N5 with logger and JSON Content-Type middleware that both call `next()`. |
 
-Written answers: [N1_answers.docx](set1/n1-setup/N1_answers.docx)
+Written answers: [N1_answers.docx](set1/n1-setup/N1_answers.docx) and [N6_answers.docx](set2/n6-middleware/N6_answers.docx)
 
 ## How to run
 
@@ -62,6 +65,33 @@ node index.js read temp.txt      # missing file message
 
 `files/` contains `about-me.txt`, `notes.txt`, and `todo.txt`, all created with `node index.js create`.
 
+### N4 — HTTP Server
+
+```bash
+cd set2/n4-server
+node server.js
+```
+
+Open http://localhost:8000/, http://localhost:8000/about, http://localhost:8000/contact, and http://localhost:8000/xyz in the browser. Press **Ctrl + C** to stop the server.
+
+### N5 — API
+
+```bash
+cd set2/n5-api
+node server.js
+```
+
+Endpoints and example bodies are in [set2/n5-api/README.md](set2/n5-api/README.md). Base URL: `http://localhost:3000/api/students`.
+
+### N6 — Middleware
+
+```bash
+cd set2/n6-middleware
+node server.js
+```
+
+Each request prints a logger line with the date/time, method, and URL, for example `[11/30/2026, 9:15:02 AM] GET /api/students`. Endpoints were tested with Thunder Client in VS Code. Only one of N5 or N6 can run at a time because both use port 3000.
+
 ## Screenshots
 
 Every program prints **"Samantha Ondoy (IV-BSIT-A)"** in its first line or startup message.
@@ -96,3 +126,36 @@ Every program prints **"Samantha Ondoy (IV-BSIT-A)"** in its first line or start
 ![N3 update](set1/n3-file-manager/screenshots/n3_update.png)
 ![N3 delete](set1/n3-file-manager/screenshots/n3_delete.png)
 ![N3 list](set1/n3-file-manager/screenshots/n3_list.png)
+
+### N4 — `set2/n4-server/screenshots/`
+Capture the whole browser window so the **address bar is visible**.
+- `n4_home.png` — `http://localhost:8000/`
+- `n4_about.png` — `http://localhost:8000/about`
+- `n4_contact.png` — `http://localhost:8000/contact`
+- `n4_404.png` — `http://localhost:8000/xyz` (optional: open DevTools → Network to show the 404 status)
+
+![N4 home](set2/n4-server/screenshots/n4_home.png)
+![N4 about](set2/n4-server/screenshots/n4_about.png)
+![N4 contact](set2/n4-server/screenshots/n4_contact.png)
+![N4 404](set2/n4-server/screenshots/n4_404.png)
+
+### N5 — `set2/n5-api/screenshots/`
+- `n5_get_all.png` — `GET /api/students` returning the three sample students.
+
+![N5 get all](set2/n5-api/screenshots/n5_get_all.png)
+
+### N6 — `set2/n6-middleware/screenshots/`
+In Postman or Thunder Client, show the method, URL, body, response, and status code in each one.
+- `n6_get_all.png` — GET `/api/students` → 200
+- `n6_post.png` — POST `/api/students` → 201
+- `n6_get_one.png` — GET `/api/students/4` → 200
+- `n6_put.png` — PUT `/api/students/4` → 200
+- `n6_delete.png` — DELETE `/api/students/4` → 200
+- `n6_logger.png` — the terminal showing the logger lines
+
+![N6 GET all](set2/n6-middleware/screenshots/n6_get_all.png)
+![N6 POST](set2/n6-middleware/screenshots/n6_post.png)
+![N6 GET one](set2/n6-middleware/screenshots/n6_get_one.png)
+![N6 PUT](set2/n6-middleware/screenshots/n6_put.png)
+![N6 DELETE](set2/n6-middleware/screenshots/n6_delete.png)
+![N6 logger](set2/n6-middleware/screenshots/n6_logger.png)
