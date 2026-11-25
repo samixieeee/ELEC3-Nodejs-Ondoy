@@ -1,0 +1,11 @@
+{
+  "name": "n6-middleware",
+  "version": "1.0.0",
+  "description": "ELEC 3 N6 Students API with custom middleware - Samantha Ondoy (IV-BSIT-A)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Samantha Ondoy",
+  "license": "ISC"
+}
